@@ -1,10 +1,14 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .mark-as-favourite-wrapper {
+        .mark-as-favourite-btn {
+            width: 100%;
 
-.mark-as-favourite-wrapper {
-    .mark-as-favourite-btn {
-        width: 100%;
-
-        &.fav-marked {
-            .lib-css(background-color, @button-green);
+            &.fav-marked {
+                .lib-css(background-color, @button-green);
+            }
         }
     }
 }
