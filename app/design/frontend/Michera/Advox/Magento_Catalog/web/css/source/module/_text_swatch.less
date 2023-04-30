@@ -1,0 +1,22 @@
+//
+//  Common (styles-m.css)
+//  _____________________________________________
+& when (@media-common = true) {
+    .catalog-category-view {
+        .swatch-attribute.size {
+            .swatch-option.text {
+                border: none;
+                width: 85%;
+                border-radius: 8px;
+                text-align: left;
+                padding: 4px 8px 4px 14px;
+
+                &.selected {
+                    .lib-css(background, @color-gray60);
+                    .lib-css(color, @color-white);
+                    outline: none;
+                }
+            }
+        }
+    }
+}
