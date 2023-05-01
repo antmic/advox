@@ -1,9 +1,9 @@
 define([
-        'jquery'
-    ], function favouriteBtn($) {
+        'jquery', 'mage/translate'
+    ], function favouriteBtn($, $t) {
         return function (config, element) {
-            const defaultText = 'Mark as Favourite'
-            const markedText = 'Already in Favourites'
+            const defaultText = $t('Mark as Favourite')
+            const markedText = $t('Already in Favourites')
             const className = 'fav-marked'
             $(function () {
                 let data = localStorage.getItem(config.wrapper);
