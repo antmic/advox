@@ -38,7 +38,7 @@ define([
         function checkPaste(e) {
             let clipboardData = e.clipboardData || e.originalEvent.clipboardData || window.clipboardData;
             pasteData = clipboardData.getData('text');
-            if (!/[0-9]/.test(pasteData)) {
+            if (!/^[0-9]+$/.test(pasteData)) {
                 e.preventDefault();
                 return false;
             }
