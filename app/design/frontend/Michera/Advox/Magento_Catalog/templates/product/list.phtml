@@ -48,7 +48,8 @@ $_helper = $block->getData('outputHelper');
     <div class="products wrapper <?= /* @noEscape */
     $viewMode ?> products-<?= /* @noEscape */
     $viewMode ?>">
-        <ol class="products list items product-items" data-mage-init='{"changeTextSwatch": {"products": ".product-items"}}'>
+        <ol class="products list items product-items"
+            data-mage-init='{"changeTextSwatch": {"products": ".product-items"}}'>
             <?php /** @var $_product \Magento\Catalog\Model\Product */ ?>
             <?php foreach ($_productCollection as $_product): ?>
                 <li class="item product product-item">
@@ -70,7 +71,11 @@ $_helper = $block->getData('outputHelper');
                            tabindex="-1">
                             <?= $productImage->toHtml() ?>
                         </a>
-                        <div class="product details product-item-details">
+                        <div id="product-details_<?= /* @noEscape */
+                        $_product->getId() ?>" class="product details product-item-details"
+                             data-mage-init='{"favouriteBtn": {"btn": "#favourite-btn_<?= /* @noEscape */
+                             $_product->getId() ?>", "wrapper": "#product-details_<?= /* @noEscape */
+                             $_product->getId() ?>"}}'>
                             <?php $_productNameStripped = $block->stripTags($_product->getName(), null, true); ?>
                             <strong class="product name product-item-name">
                                 <a class="product-item-link"
@@ -162,7 +167,8 @@ $_helper = $block->getData('outputHelper');
                                     </div>
                                 <?php endif; ?>
                                 <div class="mark-as-favourite-wrapper">
-                                    <button id="favourite-btn" class="mark-as-favourite-btn action primary" data-mage-init='{"favouriteBtn": {"btn": "#favourite-btn"}}'>
+                                    <button id="favourite-btn_<?= /* @noEscape */
+                                    $_product->getId() ?>" class="mark-as-favourite-btn action primary">
                                         <span><?= $escaper->escapeHtml(__('Mark as Favourite')) ?></span></button>
                                 </div>
                             </div>
@@ -188,6 +194,7 @@ $_helper = $block->getData('outputHelper');
             }
         }
     }
+
 
     </script>
 <?php endif; ?>
