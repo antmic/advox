@@ -5,10 +5,6 @@ define([
             const defaultText = 'Mark as Favourite'
             const markedText = 'Already in Favourites'
             const className = 'fav-marked'
-
-            console.log(config.btn)
-            console.log(config.wrapper)
-
             $(function () {
                 let data = localStorage.getItem(config.wrapper);
                 if (data !== null) {
@@ -17,8 +13,6 @@ define([
                 }
             });
             $(config.btn).on('click', function () {
-                console.log('click',  config.btn)
-
                 if (!$(this).hasClass(className)) {
                     $(this).addClass(className);
                     $(this).find('span').text(markedText);
